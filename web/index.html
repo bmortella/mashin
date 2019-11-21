@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mashin | Dirija verde</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <img src="images/small_logoazul.png" alt="">
+        </a>
+        <a class="navbar-item">
+              Mashin
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+    
+    
+    <section class="hero is-primary is-medium is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-three-fifths">
+              <h1 class="title is-1">Mashin</h1>
+              <h1 class="subtitle is-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam ultrices lorem, vel feugiat enim iaculis ut. Quisque ut velit nibh. Cras luctus neque nunc, id congue orci elementum eu. Etiam quis libero id mauris ultrices viverra vitae non erat. Etiam in scelerisque nunc. Morbi fringilla nulla arcu, in ultrices mi egestas ut. Sed tincidunt libero vel nulla fringilla ultricies. Suspendisse gravida mollis nisl, eu feugiat velit venenatis et. Vivamus in eros ultrices, vulputate est malesuada, tincidunt leo. </h1>
+            </div>
+            <div class="column is-offset-1">
+              <div class="box">
+                <h1 class="title is-primary">Cadastre-se agora</h1>
+                <form>
+                  <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label">Nome</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Nome">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label">Sobrenome</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label">Senha</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Senha">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-primary is-medium is-fullwidth is-rounded">Enviar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+          // Add a click event on each of them
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+
+            });
+          });
+        }
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+.hero.is-primary {
+  background-color: #006beb;
+}
+
+.hero.is-primary.is-bold {
+    background-image: linear-gradient(141deg, #006beb 0,#00d1b2 71%, #00e7eb 100%);
+}
+
+.hero .title.is-primary {
+  color: #006beb;
+}
+
+.button.is-primary {
+  background-color: #006beb;
+}
