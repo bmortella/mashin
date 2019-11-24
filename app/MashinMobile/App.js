@@ -3,10 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import LoginScreen from './components/login/LoginScreen';
+import SignupScreen from './components/signup/SignupScreen'
 
 const MainNavigator = createStackNavigator({
   Home: {screen: LoginScreen},
-  //Profile: {screen: ProfileScreen},
+  Signup: {screen: SignupScreen},
 });
 
 const App = createAppContainer(MainNavigator);

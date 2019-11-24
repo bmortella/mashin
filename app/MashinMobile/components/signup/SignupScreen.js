@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { StyleSheet, TextInput, View, Image, Button, Alert } from 'react-native';
 
-class LoginScreen extends React.Component {
+class SignupScreen extends React.Component {
     static navigationOptions = {
-        title: 'Login',
+        title: 'Registrar',
     };
     render() {
         const {navigate} = this.props.navigation;
@@ -16,12 +16,25 @@ class LoginScreen extends React.Component {
                 />
                 <TextInput
                 style={styles.input}
+                placeholder="Nome"
+                />
+                <TextInput
+                style={styles.input}
+                placeholder="Sobrenome"
+                />
+                <TextInput
+                style={styles.input}
+                secureTextEntry={true}
+                placeholder="CPF"
+                />
+                <TextInput
+                style={styles.input}
                 secureTextEntry={true}
                 placeholder="Senha"
                 />
                 <Button
-                title="Login"
-                onPress={() => navigate('Signup')}
+                title="Registrar"
+                onPress={() => Alert.alert('Registrar')}
                 />
             </View>
         );
@@ -44,4 +57,4 @@ const styles = StyleSheet.create({
   }
 });
  
-export default LoginScreen;
+export default SignupScreen;
