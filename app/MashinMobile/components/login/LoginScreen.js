@@ -21,12 +21,12 @@ class LoginScreen extends React.Component {
                 />
                 <Button
                 title="Login"
-                onPress={() => navigate('Signup')}
+                onPress={() => navigate('Map')}
                 />
             </View>
         );
     }
-}
+} 
 
 const styles = StyleSheet.create({
   container: {

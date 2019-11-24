@@ -1,13 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import LoginScreen from './components/login/LoginScreen';
 import SignupScreen from './components/signup/SignupScreen'
+import MapScreen from './components/map/MapScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: LoginScreen},
   Signup: {screen: SignupScreen},
+  Map: {screen : MapScreen}
 });
 
 const App = createAppContainer(MainNavigator);
