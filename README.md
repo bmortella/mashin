@@ -1,3 +1,7 @@
+####### Projeto de Engenharia de Software
+####### Bruno Mortella
+####### Júlia Paiva
+
 # Mashin.
  Mashin é um aplicativo de aluguel de carros elétricos com sistema de carona integrado, que diminuirá o preço do aluguel para o cliente que está alugando. Os veículos estarão disponíveis em estacionamentos comerciais, nas ruas e futuramente em condomínios residenciais. A empresa futuramente investirá em pontos de recarga nos locais de aluguel.
 
