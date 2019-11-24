@@ -16,7 +16,7 @@ let db = new sqlite3.Database('./database.db', (err) => {
 app.post('/api/users/register', function(req, res) {
    db.run(`
      INSERT INTO users(Email, Senha, Nome, Sobrenome, CPF, CNH) VALUES (?, ?, ?, ?, ?, ?)
-   `, [req.body.args.email, req.body.args.password, req.body.args.name, req.body.args.lastname, req.body.args.cpf, ""])
+   `, [req.body.args.email, req.body.args.password, req.body.args.name, req.body.args.lastname, req.body.args.cpf, req.body.args.cnh])
   res.sendStatus(200)
 });
 
