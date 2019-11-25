@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { TouchableOpacity, StyleSheet, View, Text} from 'react-native';
+import { TouchableOpacity, StyleSheet, View, Text, Alert} from 'react-native';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -9,10 +9,38 @@ import { theme } from '../components/theme';
  
 
 class LoginScreen extends React.Component {
+
+    constructor(props) {
+      super(props);
+      this.state = {
+                  email: '',
+                  password: '',
+                  };
+    }
+
     static navigationOptions = {
         header:null,
     };
     
+    handlePress = async () => {
+      fetch('http://192.168.0.21:3000/api/users/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ 
+              "args": {
+                  "email": this.state.email,
+                  "password": this.state.password,
+              }
+          })
+      }).then(() => {
+          this.props.navigation.navigate('Map')
+      }).catch((error) =>{
+          Alert.alert(error);
+      });
+    }
+
     render() {
         const {navigate} = this.props.navigation;
         return (
@@ -25,7 +53,8 @@ class LoginScreen extends React.Component {
             <TextInput
               label="Email"
               returnKeyType="next"
-              value=''
+              onChangeText={(email) => this.setState({email})}
+              value={this.state.email}
               error=''
               errorText=''
               autoCapitalize="none"
@@ -37,21 +66,14 @@ class LoginScreen extends React.Component {
             <TextInput
               label="Senha"
               returnKeyType="done"
-              value=''
+              onChangeText={(password) => this.setState({password})}
+              value={this.state.password}
               error=''
               errorText=''
               secureTextEntry
             />
       
-            {/* <View style=>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('ForgotPassword')}
-              >
-                <Text style={styles.label}>Esqueceu sua senha?</Text>
-              </TouchableOpacity>
-            </View>  */}
-      
-            <Button mode="contained" onPress=''>
+            <Button mode="contained" onPress={this.handlePress.bind(this)}>
               Login
             </Button>
       
