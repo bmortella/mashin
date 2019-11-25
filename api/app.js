@@ -20,6 +20,22 @@ app.post('/api/users/register', function(req, res) {
   res.sendStatus(200)
 });
 
+app.post('/api/users/login', function(req,res) {
+  let sql = `
+    SELECT * FROM users WHERE Email = ? AND Senha = ?
+  `;
+  let email = req.body.args.email
+  let pass = req.body.args.password
+  db.get(sql, [email, pass], (err, row) => {
+    if (err) {
+      return console.log(row.id, row.name);
+    }
+    return row
+    ? res.sendStatus(200)
+    : res.sendStatus(403);
+  })
+  res.sendStatus(200)
+});
 
 app.listen(3000, function () {
     db.run(`CREATE TABLE IF NOT EXISTS 
